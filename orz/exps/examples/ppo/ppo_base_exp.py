@@ -63,7 +63,7 @@ class BasePPOExpConfig(BaseConfig):
     enable_prefix_caching: bool = False
     enable_chunked_prefill: bool = False
     max_num_batched_tokens: int = 2048
-    enforce_eager: bool = False
+    enforce_eager: bool = True
     gpu_memory_utilization: float = 0.85
 
     # logging related settings
@@ -211,21 +211,23 @@ class BasePPOExp(BaseExp):
         # validate the arguments
         _validate_args(self.cfg)
 
-        # initialize the ray cluster
-        ray.init(
-            runtime_env=RuntimeEnv(
-                env_vars={
-                    "NCCL_DEBUG": "WARN",
-                    "NCCL_PXN_DISABLE": "1",
-                    "NCCL_ALGO": "^Ring",
-                    "NCCL_NET_OVERHEAD": "1000000",
-                    "CUDA_LAUNCH_BLOCKING": "1",
-                }
-            )
-        )
-
-        # build the models
-        await self.trainer.build_models(self.PolicyRayActor, self.CriticRayActor, self.RefRayActor, self.RewardRayActor)
+        # # initialize the ray cluster
+        # ray.init(
+        #     runtime_env=RuntimeEnv(
+        #         env_vars={
+        #             "NCCL_DEBUG": "WARN",
+        #             "NCCL_PXN_DISABLE": "1",
+        #             "NCCL_ALGO": "^Ring",
+        #             "NCCL_NET_OVERHEAD": "1000000",
+        #             "CUDA_LAUNCH_BLOCKING": "1",
+        #         }
+        #     )
+        # )
+        if self.cfg.algorithm == "grpo":
+            # build the models
+            await self.trainer.build_models(self.PolicyRayActor, self.RefRayActor)
+        else:
+            await self.trainer.build_models(self.PolicyRayActor, self.RefRayActor, self.CriticRayActor, self.RewardRayActor)
 
         # initialize the trainer and enter the training loop
         await self.trainer.train()

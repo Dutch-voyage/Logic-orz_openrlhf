@@ -1,0 +1,1302 @@
+[
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Amelia, Penelope, and Evelyn. Amelia said that Evelyn is not a knight. Penelope was heard saying, \"Penelope is a knight or Evelyn is a knave\". Evelyn was heard saying, \"Penelope is a knight if and only if Penelope is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Amelia is a knight\n(2) Penelope is a knight\n(3) Evelyn is a knave",
+        "statements": "(('not', ('telling-truth', 2)), ('or', ('telling-truth', 1), ('lying', 2)), ('<=>', ('telling-truth', 1), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Michael, Evelyn, and Victoria. Michael told you that If Victoria is a knave then Evelyn is a knight. \"Michael is a knight,\" Evelyn mentioned. Victoria said that Michael is a knave or Evelyn is a knave. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Michael is a knight\n(2) Evelyn is a knight\n(3) Victoria is a knave",
+        "statements": "(('->', ('lying', 2), ('telling-truth', 1)), ('telling-truth', 0), ('or', ('lying', 0), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: William, Alexander, and Ella. As William put it, \"Ella is a knave or Alexander is a knave\". According to Alexander, \"If William is a knave then Ella is a knave\". Ella remarked, \"If Alexander is a knight then William is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) William is a knight\n(2) Alexander is a knight\n(3) Ella is a knave",
+        "statements": "(('or', ('lying', 2), ('lying', 1)), ('->', ('lying', 0), ('lying', 2)), ('->', ('telling-truth', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Samuel, Ella, and Logan. Samuel commented, \"Logan is a knight if and only if Logan is a knave\". Ella remarked, \"Ella is a knight\". In Logan's words: \"If Logan is a knight then Ella is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Samuel is a knave\n(2) Ella is a knave\n(3) Logan is a knight",
+        "statements": "(('<=>', ('telling-truth', 2), ('lying', 2)), ('telling-truth', 1), ('->', ('telling-truth', 2), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Daniel, Abigail, and Avery. Daniel remarked, \"If Avery is a knave then Abigail is a knave\". In a statement by Abigail: \"Avery is a knight and Daniel is a knave\". Avery noted, \"Abigail is not a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Daniel is a knight\n(2) Abigail is a knave\n(3) Avery is a knave",
+        "statements": "(('->', ('lying', 2), ('lying', 1)), ('and', ('telling-truth', 2), ('lying', 0)), ('not', ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Riley, Grace, and Zoey. Riley stated, \"Zoey is a knight if and only if Zoey is a knave\". Grace told you that Zoey is a knight or Riley is a knight. As Zoey put it, \"Grace is a knave and Grace is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Riley is a knave\n(2) Grace is a knave\n(3) Zoey is a knave",
+        "statements": "(('<=>', ('telling-truth', 2), ('lying', 2)), ('or', ('telling-truth', 2), ('telling-truth', 0)), ('and', ('lying', 1), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Samuel, Emily, and Liam. Samuel asserted: \"If Liam is a knave then Liam is a knight\". Emily commented, \"If Liam is a knave then Samuel is a knave\". Liam stated, \"Emily is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Samuel is a knight\n(2) Emily is a knight\n(3) Liam is a knight",
+        "statements": "(('->', ('lying', 2), ('telling-truth', 2)), ('->', ('lying', 2), ('lying', 0)), ('telling-truth', 1))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Penelope, Oliver, and Chloe. Penelope expressed that Chloe is a knight. According to Oliver, \"Penelope is a knight\". Chloe stated, \"Chloe is a knight if and only if Oliver is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Penelope is a knight\n(2) Oliver is a knight\n(3) Chloe is a knight",
+        "statements": "(('telling-truth', 2), ('telling-truth', 0), ('<=>', ('telling-truth', 2), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Lily, Matthew, and Riley. In a statement by Lily: \"Lily is a knight if and only if Riley is a knight\". \"Lily is a knave,\" Matthew claimed. According to Riley, \"Lily is a knave if and only if Riley is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Lily is a knave\n(2) Matthew is a knight\n(3) Riley is a knight",
+        "statements": "(('<=>', ('telling-truth', 0), ('telling-truth', 2)), ('lying', 0), ('<=>', ('lying', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Jack, Penelope, and Alexander. \"Penelope is a knave or Penelope is a knight,\" Jack declared. \"Alexander is a knight or Alexander is a knave\" - Penelope. Alexander told you that Penelope is not a knave. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Jack is a knight\n(2) Penelope is a knight\n(3) Alexander is a knight",
+        "statements": "(('or', ('lying', 1), ('telling-truth', 1)), ('or', ('telling-truth', 2), ('lying', 2)), ('not', ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Aurora, Logan, and Henry. According to Aurora, \"Logan is a knave or Logan is a knight\". Logan remarked, \"Henry is a knight and Logan is a knight\". Henry stated, \"Logan is a knight and Logan is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Aurora is a knight\n(2) Logan is a knave\n(3) Henry is a knave",
+        "statements": "(('or', ('lying', 1), ('telling-truth', 1)), ('and', ('telling-truth', 2), ('telling-truth', 1)), ('and', ('telling-truth', 1), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Daniel, David, and Scarlett. \"If David is a knight then Scarlett is a knave,\" Daniel claimed. David expressed that David is a knight and Scarlett is a knight. \"Daniel is a knight if and only if Daniel is a knave,\" Scarlett mentioned. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Daniel is a knight\n(2) David is a knave\n(3) Scarlett is a knave",
+        "statements": "(('->', ('telling-truth', 1), ('lying', 2)), ('and', ('telling-truth', 1), ('telling-truth', 2)), ('<=>', ('telling-truth', 0), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Evelyn, Ethan, and Oliver. \"Oliver is a knight and Ethan is a knight,\" Evelyn declared. Ethan stated, \"Ethan is a knight or Oliver is a knave\". Oliver said that Ethan is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Evelyn is a knight\n(2) Ethan is a knight\n(3) Oliver is a knight",
+        "statements": "(('and', ('telling-truth', 2), ('telling-truth', 1)), ('or', ('telling-truth', 1), ('lying', 2)), ('telling-truth', 1))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Sophia, Olivia, and Samuel. In Sophia's words: \"Samuel is a knight if and only if Olivia is a knave\". Olivia expressed that Sophia is a knave if and only if Olivia is a knight. \"Olivia is a knight or Sophia is a knave,\" Samuel declared. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Sophia is a knave\n(2) Olivia is a knight\n(3) Samuel is a knight",
+        "statements": "(('<=>', ('telling-truth', 2), ('lying', 1)), ('<=>', ('lying', 0), ('telling-truth', 1)), ('or', ('telling-truth', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Benjamin, Logan, and Zoey. Benjamin was heard saying, \"Logan is a knave\". In Logan's words: \"Logan is a knight and Zoey is a knight\". \"Logan is a knight if and only if Zoey is a knight\" - Zoey. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Benjamin is a knave\n(2) Logan is a knight\n(3) Zoey is a knight",
+        "statements": "(('lying', 1), ('and', ('telling-truth', 1), ('telling-truth', 2)), ('<=>', ('telling-truth', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Logan, Ella, and Sofia. According to Logan, \"Sofia is not a knave\". \"Logan is not a knave,\" Ella mentioned. As Sofia put it, \"Logan is a knave or Logan is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Logan is a knight\n(2) Ella is a knight\n(3) Sofia is a knight",
+        "statements": "(('not', ('lying', 2)), ('not', ('lying', 0)), ('or', ('lying', 0), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Avery, Michael, and Alexander. In Avery's words: \"Michael is a knight and Alexander is a knight\". According to Michael, \"Avery is a knight if and only if Alexander is a knave\". Alexander said, \"Michael is a knight if and only if Michael is a knave.\" So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Avery is a knave\n(2) Michael is a knave\n(3) Alexander is a knave",
+        "statements": "(('and', ('telling-truth', 1), ('telling-truth', 2)), ('<=>', ('telling-truth', 0), ('lying', 2)), ('<=>', ('telling-truth', 1), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Lily, Scarlett, and Aria. Lily remarked, \"Aria is a knight if and only if Aria is a knave\". According to Scarlett, \"Lily is not a knave\". Aria remarked, \"Scarlett is a knight and Aria is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Lily is a knave\n(2) Scarlett is a knave\n(3) Aria is a knave",
+        "statements": "(('<=>', ('telling-truth', 2), ('lying', 2)), ('not', ('lying', 0)), ('and', ('telling-truth', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Mia, Daniel, and Jacob. As Mia put it, \"If Jacob is a knave then Daniel is a knave\". \"If Jacob is a knave then Mia is a knave\" - Daniel. Jacob expressed that Daniel is not a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Mia is a knave\n(2) Daniel is a knight\n(3) Jacob is a knave",
+        "statements": "(('->', ('lying', 2), ('lying', 1)), ('->', ('lying', 2), ('lying', 0)), ('not', ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Samuel, Aurora, and Sophia. Samuel stated, \"Aurora is a knight if and only if Aurora is a knave\". \"Aurora is a knight or Sophia is a knave,\" Aurora mentioned. Sophia said that Aurora is a knave if and only if Samuel is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Samuel is a knave\n(2) Aurora is a knight\n(3) Sophia is a knight",
+        "statements": "(('<=>', ('telling-truth', 1), ('lying', 1)), ('or', ('telling-truth', 1), ('lying', 2)), ('<=>', ('lying', 1), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Charlotte, Grace, and Aurora. As Charlotte put it, \"Aurora is a knave and Aurora is a knight\". According to Grace, \"Aurora is a knight\". Aurora told you that Grace is a knave and Grace is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Charlotte is a knave\n(2) Grace is a knave\n(3) Aurora is a knave",
+        "statements": "(('and', ('lying', 2), ('telling-truth', 2)), ('telling-truth', 2), ('and', ('lying', 1), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Olivia, Sofia, and Alexander. In a statement by Olivia: \"Alexander is a knight or Alexander is a knave\". Sofia asserted: \"Alexander is a knave and Alexander is a knight\". Alexander said that Olivia is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Olivia is a knight\n(2) Sofia is a knave\n(3) Alexander is a knight",
+        "statements": "(('or', ('telling-truth', 2), ('lying', 2)), ('and', ('lying', 2), ('telling-truth', 2)), ('telling-truth', 0))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Jack, Abigail, and Ethan. Jack noted, \"Jack is a knight and Ethan is a knave\". Abigail said that Jack is a knight. \"Abigail is a knave or Jack is a knight,\" Ethan declared. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Jack is a knave\n(2) Abigail is a knave\n(3) Ethan is a knight",
+        "statements": "(('and', ('telling-truth', 0), ('lying', 2)), ('telling-truth', 0), ('or', ('lying', 1), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Lucas, Victoria, and Ella. \"Victoria is a knight or Victoria is a knave,\" Lucas claimed. Victoria expressed that Victoria is a knight and Lucas is a knave. In a statement by Ella: \"Lucas is a knave or Lucas is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Lucas is a knight\n(2) Victoria is a knave\n(3) Ella is a knight",
+        "statements": "(('or', ('telling-truth', 1), ('lying', 1)), ('and', ('telling-truth', 1), ('lying', 0)), ('or', ('lying', 0), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Alexander, Sophia, and Chloe. \"If Chloe is a knight then Sophia is a knight,\" Alexander claimed. Sophia stated, \"If Chloe is a knight then Chloe is a knave\". According to Chloe, \"Sophia is a knight and Alexander is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Alexander is a knight\n(2) Sophia is a knight\n(3) Chloe is a knave",
+        "statements": "(('->', ('telling-truth', 2), ('telling-truth', 1)), ('->', ('telling-truth', 2), ('lying', 2)), ('and', ('telling-truth', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Charlotte, Ella, and Scarlett. \"Scarlett is a knave and Ella is a knight,\" Charlotte mentioned. \"Charlotte is not a knave\" - Ella. Scarlett was heard saying, \"Ella is a knight or Charlotte is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Charlotte is a knave\n(2) Ella is a knave\n(3) Scarlett is a knight",
+        "statements": "(('and', ('lying', 2), ('telling-truth', 1)), ('not', ('lying', 0)), ('or', ('telling-truth', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Noah, Alexander, and Lily. Noah commented, \"If Noah is a knight then Alexander is a knight\". \"Noah is a knight or Alexander is a knight,\" Alexander mentioned. Lily expressed that Noah is not a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Noah is a knight\n(2) Alexander is a knight\n(3) Lily is a knave",
+        "statements": "(('->', ('telling-truth', 0), ('telling-truth', 1)), ('or', ('telling-truth', 0), ('telling-truth', 1)), ('not', ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Jack, Scarlett, and Aiden. As Jack put it, \"Aiden is a knight\". According to Scarlett, \"Jack is a knave\". In a statement by Aiden: \"Jack is a knave if and only if Aiden is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Jack is a knave\n(2) Scarlett is a knight\n(3) Aiden is a knave",
+        "statements": "(('telling-truth', 2), ('lying', 0), ('<=>', ('lying', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Abigail, Matthew, and Owen. Abigail remarked, \"If Matthew is a knight then Matthew is a knave\". Matthew noted, \"Owen is a knight if and only if Abigail is a knave\". As Owen put it, \"Matthew is not a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Abigail is a knight\n(2) Matthew is a knave\n(3) Owen is a knight",
+        "statements": "(('->', ('telling-truth', 1), ('lying', 1)), ('<=>', ('telling-truth', 2), ('lying', 0)), ('not', ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Luke, Michael, and Zoey. \"Michael is a knight,\" Luke mentioned. \"If Michael is a knight then Zoey is a knave,\" Michael mentioned. \"Luke is not a knight,\" Zoey claimed. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Luke is a knight\n(2) Michael is a knight\n(3) Zoey is a knave",
+        "statements": "(('telling-truth', 1), ('->', ('telling-truth', 1), ('lying', 2)), ('not', ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Lucas, Jackson, and Victoria. \"Lucas is a knight if and only if Jackson is a knight,\" Lucas claimed. \"Lucas is a knave,\" Jackson claimed. Victoria remarked, \"Jackson is a knight or Jackson is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Lucas is a knave\n(2) Jackson is a knight\n(3) Victoria is a knight",
+        "statements": "(('<=>', ('telling-truth', 0), ('telling-truth', 1)), ('lying', 0), ('or', ('telling-truth', 1), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Aiden, David, and Abigail. Aiden told you that Abigail is a knave. David told you that Aiden is a knave or Abigail is a knave. \"David is a knight if and only if David is a knave\" - Abigail. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Aiden is a knight\n(2) David is a knight\n(3) Abigail is a knave",
+        "statements": "(('lying', 2), ('or', ('lying', 0), ('lying', 2)), ('<=>', ('telling-truth', 1), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Matthew, Jacob, and Abigail. \"If Abigail is a knave then Abigail is a knight,\" Matthew mentioned. Jacob stated, \"Matthew is not a knave\". As Abigail put it, \"Abigail is a knight or Matthew is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Matthew is a knight\n(2) Jacob is a knight\n(3) Abigail is a knight",
+        "statements": "(('->', ('lying', 2), ('telling-truth', 2)), ('not', ('lying', 0)), ('or', ('telling-truth', 2), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Sebastian, Ava, and Amelia. \"Amelia is a knave and Ava is a knave,\" Sebastian declared. \"Sebastian is a knave,\" Ava declared. Amelia expressed that Sebastian is a knight if and only if Amelia is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Sebastian is a knight\n(2) Ava is a knave\n(3) Amelia is a knave",
+        "statements": "(('and', ('lying', 2), ('lying', 1)), ('lying', 0), ('<=>', ('telling-truth', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Owen, Logan, and Chloe. In Owen's words: \"Owen is a knight and Chloe is a knave\". As Logan put it, \"Chloe is a knave\". Chloe remarked, \"Owen is a knight if and only if Chloe is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Owen is a knight\n(2) Logan is a knight\n(3) Chloe is a knave",
+        "statements": "(('and', ('telling-truth', 0), ('lying', 2)), ('lying', 2), ('<=>', ('telling-truth', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Evelyn, William, and Mia. As Evelyn put it, \"Mia is a knave if and only if Evelyn is a knight\". William remarked, \"Mia is a knave\". \"Evelyn is a knight if and only if Mia is a knight,\" Mia mentioned. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Evelyn is a knight\n(2) William is a knight\n(3) Mia is a knave",
+        "statements": "(('<=>', ('lying', 2), ('telling-truth', 0)), ('lying', 2), ('<=>', ('telling-truth', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Matthew, Sebastian, and Liam. As Matthew put it, \"Sebastian is a knight or Sebastian is a knave\". \"Matthew is a knight if and only if Liam is a knave,\" Sebastian mentioned. In Liam's words: \"Liam is a knight if and only if Sebastian is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Matthew is a knight\n(2) Sebastian is a knave\n(3) Liam is a knight",
+        "statements": "(('or', ('telling-truth', 1), ('lying', 1)), ('<=>', ('telling-truth', 0), ('lying', 2)), ('<=>', ('telling-truth', 2), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Avery, Oliver, and Scarlett. Avery told you that Scarlett is a knight if and only if Scarlett is a knave. In Oliver's words: \"Avery is a knave and Scarlett is a knight\". Scarlett expressed that Oliver is a knave and Scarlett is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Avery is a knave\n(2) Oliver is a knave\n(3) Scarlett is a knave",
+        "statements": "(('<=>', ('telling-truth', 2), ('lying', 2)), ('and', ('lying', 0), ('telling-truth', 2)), ('and', ('lying', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Chloe, Jack, and Benjamin. Chloe asserted: \"Jack is a knave and Benjamin is a knight\". Jack commented, \"Benjamin is a knight and Benjamin is a knave\". Benjamin commented, \"Chloe is a knight and Jack is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Chloe is a knave\n(2) Jack is a knave\n(3) Benjamin is a knave",
+        "statements": "(('and', ('lying', 1), ('telling-truth', 2)), ('and', ('telling-truth', 2), ('lying', 2)), ('and', ('telling-truth', 0), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Emily, William, and Noah. Emily told you that William is not a knave. As William put it, \"Noah is not a knave\". Noah asserted: \"If William is a knight then Noah is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Emily is a knight\n(2) William is a knight\n(3) Noah is a knight",
+        "statements": "(('not', ('lying', 1)), ('not', ('lying', 2)), ('->', ('telling-truth', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Oliver, Samuel, and Chloe. Oliver stated, \"Chloe is a knight and Samuel is a knight\". \"If Oliver is a knave then Chloe is a knight,\" Samuel claimed. Chloe said, \"Oliver is a knave if and only if Samuel is a knight.\" So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Oliver is a knave\n(2) Samuel is a knave\n(3) Chloe is a knave",
+        "statements": "(('and', ('telling-truth', 2), ('telling-truth', 1)), ('->', ('lying', 0), ('telling-truth', 2)), ('<=>', ('lying', 0), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Ella, Luke, and Riley. Ella said that Riley is not a knight. Luke said that If Ella is a knave then Ella is a knight. According to Riley, \"Ella is a knave or Luke is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Ella is a knave\n(2) Luke is a knave\n(3) Riley is a knight",
+        "statements": "(('not', ('telling-truth', 2)), ('->', ('lying', 0), ('telling-truth', 0)), ('or', ('lying', 0), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Logan, Alexander, and Lily. Logan was heard saying, \"If Alexander is a knight then Lily is a knight\". Alexander remarked, \"Logan is not a knave\". \"Alexander is a knave or Alexander is a knight,\" Lily claimed. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Logan is a knight\n(2) Alexander is a knight\n(3) Lily is a knight",
+        "statements": "(('->', ('telling-truth', 1), ('telling-truth', 2)), ('not', ('lying', 0)), ('or', ('lying', 1), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Zoey, Liam, and Mason. Zoey remarked, \"Zoey is a knight and Mason is a knight\". Liam expressed that Zoey is a knave or Mason is a knight. Mason told you that Zoey is not a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Zoey is a knave\n(2) Liam is a knight\n(3) Mason is a knight",
+        "statements": "(('and', ('telling-truth', 0), ('telling-truth', 2)), ('or', ('lying', 0), ('telling-truth', 2)), ('not', ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Avery, Owen, and Victoria. Avery said, \"Victoria is a knave or Avery is a knight.\" According to Owen, \"Avery is a knave and Victoria is a knave\". \"Owen is not a knave,\" Victoria claimed. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Avery is a knight\n(2) Owen is a knave\n(3) Victoria is a knave",
+        "statements": "(('or', ('lying', 2), ('telling-truth', 0)), ('and', ('lying', 0), ('lying', 2)), ('not', ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Riley, Scarlett, and Ella. In a statement by Riley: \"Riley is a knight and Scarlett is a knight\". Scarlett said that Ella is a knave and Scarlett is a knight. Ella said that Riley is a knight if and only if Ella is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Riley is a knight\n(2) Scarlett is a knight\n(3) Ella is a knave",
+        "statements": "(('and', ('telling-truth', 0), ('telling-truth', 1)), ('and', ('lying', 2), ('telling-truth', 1)), ('<=>', ('telling-truth', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Henry, Jack, and Matthew. Henry commented, \"Jack is a knight or Henry is a knight\". Jack said that Matthew is a knight and Henry is a knight. Matthew was heard saying, \"Jack is not a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Henry is a knave\n(2) Jack is a knave\n(3) Matthew is a knight",
+        "statements": "(('or', ('telling-truth', 1), ('telling-truth', 0)), ('and', ('telling-truth', 2), ('telling-truth', 0)), ('not', ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Chloe, Charlotte, and Lucas. Chloe expressed that Charlotte is not a knave. Charlotte was heard saying, \"If Lucas is a knight then Lucas is a knave\". According to Lucas, \"Lucas is a knight if and only if Charlotte is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Chloe is a knave\n(2) Charlotte is a knave\n(3) Lucas is a knight",
+        "statements": "(('not', ('lying', 1)), ('->', ('telling-truth', 2), ('lying', 2)), ('<=>', ('telling-truth', 2), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Emily, Aria, and Abigail. As Emily put it, \"Emily is a knight or Aria is a knave\". Aria said that If Aria is a knight then Abigail is a knight. Abigail stated, \"Aria is a knight if and only if Emily is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Emily is a knave\n(2) Aria is a knight\n(3) Abigail is a knight",
+        "statements": "(('or', ('telling-truth', 0), ('lying', 1)), ('->', ('telling-truth', 1), ('telling-truth', 2)), ('<=>', ('telling-truth', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Riley, Owen, and Emily. Riley expressed that If Riley is a knight then Emily is a knight. Owen commented, \"Emily is a knight\". According to Emily, \"Emily is a knight if and only if Riley is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Riley is a knight\n(2) Owen is a knight\n(3) Emily is a knight",
+        "statements": "(('->', ('telling-truth', 0), ('telling-truth', 2)), ('telling-truth', 2), ('<=>', ('telling-truth', 2), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Matthew, Joseph, and Benjamin. Matthew was heard saying, \"Benjamin is a knight\". \"Matthew is a knave if and only if Joseph is a knight\" - Joseph. As Benjamin put it, \"If Joseph is a knave then Benjamin is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Matthew is a knave\n(2) Joseph is a knave\n(3) Benjamin is a knave",
+        "statements": "(('telling-truth', 2), ('<=>', ('lying', 0), ('telling-truth', 1)), ('->', ('lying', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Sofia, Charlotte, and Olivia. \"Olivia is a knave if and only if Sofia is a knight\" - Sofia. \"Sofia is a knight and Olivia is a knave\" - Charlotte. Olivia told you that Charlotte is a knave. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Sofia is a knight\n(2) Charlotte is a knight\n(3) Olivia is a knave",
+        "statements": "(('<=>', ('lying', 2), ('telling-truth', 0)), ('and', ('telling-truth', 0), ('lying', 2)), ('lying', 1))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Riley, Ethan, and Sophia. \"Sophia is a knave and Riley is a knight,\" Riley declared. \"Riley is a knight and Sophia is a knight,\" Ethan declared. Sophia expressed that If Ethan is a knight then Riley is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Riley is a knave\n(2) Ethan is a knave\n(3) Sophia is a knight",
+        "statements": "(('and', ('lying', 2), ('telling-truth', 0)), ('and', ('telling-truth', 0), ('telling-truth', 2)), ('->', ('telling-truth', 1), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Scarlett, Avery, and Emma. \"Avery is a knave if and only if Emma is a knave,\" Scarlett claimed. Avery said, \"Emma is a knight.\" Emma stated, \"Scarlett is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Scarlett is a knight\n(2) Avery is a knight\n(3) Emma is a knight",
+        "statements": "(('<=>', ('lying', 1), ('lying', 2)), ('telling-truth', 2), ('telling-truth', 0))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Alexander, Lily, and Samuel. Alexander remarked, \"Lily is a knave or Lily is a knight\". In a statement by Lily: \"Samuel is a knight if and only if Lily is a knight\". Samuel was heard saying, \"Lily is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Alexander is a knight\n(2) Lily is a knight\n(3) Samuel is a knight",
+        "statements": "(('or', ('lying', 1), ('telling-truth', 1)), ('<=>', ('telling-truth', 2), ('telling-truth', 1)), ('telling-truth', 1))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Liam, Avery, and Owen. Liam asserted: \"Owen is a knight or Liam is a knight\". Avery told you that Liam is a knight. In Owen's words: \"If Avery is a knave then Liam is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Liam is a knight\n(2) Avery is a knight\n(3) Owen is a knight",
+        "statements": "(('or', ('telling-truth', 2), ('telling-truth', 0)), ('telling-truth', 0), ('->', ('lying', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Owen, Mia, and Noah. Owen said that Noah is a knight or Noah is a knave. \"Owen is a knave,\" Mia claimed. Noah asserted: \"Mia is a knight and Noah is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Owen is a knight\n(2) Mia is a knave\n(3) Noah is a knave",
+        "statements": "(('or', ('telling-truth', 2), ('lying', 2)), ('lying', 0), ('and', ('telling-truth', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Sebastian, Sophia, and Victoria. Sebastian said, \"Victoria is a knave and Sophia is a knave.\" In Sophia's words: \"Victoria is a knight or Sebastian is a knight\". \"If Sebastian is a knight then Sophia is a knave,\" Victoria declared. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Sebastian is a knave\n(2) Sophia is a knight\n(3) Victoria is a knight",
+        "statements": "(('and', ('lying', 2), ('lying', 1)), ('or', ('telling-truth', 2), ('telling-truth', 0)), ('->', ('telling-truth', 0), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Jackson, Aurora, and Lucas. As Jackson put it, \"If Aurora is a knave then Lucas is a knight\". As Aurora put it, \"Lucas is a knave if and only if Aurora is a knight\". In Lucas's words: \"Lucas is a knight or Aurora is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Jackson is a knight\n(2) Aurora is a knight\n(3) Lucas is a knave",
+        "statements": "(('->', ('lying', 1), ('telling-truth', 2)), ('<=>', ('lying', 2), ('telling-truth', 1)), ('or', ('telling-truth', 2), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Charlotte, Mia, and Lucas. \"Lucas is a knave and Lucas is a knight\" - Charlotte. Mia was heard saying, \"Lucas is a knave and Lucas is a knight\". Lucas was heard saying, \"Charlotte is not a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Charlotte is a knave\n(2) Mia is a knave\n(3) Lucas is a knave",
+        "statements": "(('and', ('lying', 2), ('telling-truth', 2)), ('and', ('lying', 2), ('telling-truth', 2)), ('not', ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Riley, Samuel, and Liam. \"Liam is not a knave,\" Riley mentioned. In a statement by Samuel: \"Riley is not a knave\". Liam stated, \"Samuel is a knight if and only if Riley is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Riley is a knight\n(2) Samuel is a knight\n(3) Liam is a knight",
+        "statements": "(('not', ('lying', 2)), ('not', ('lying', 0)), ('<=>', ('telling-truth', 1), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Oliver, Elizabeth, and Jacob. Oliver remarked, \"Jacob is a knave and Elizabeth is a knight\". Elizabeth remarked, \"If Jacob is a knave then Jacob is a knight\". In Jacob's words: \"Elizabeth is a knave or Jacob is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Oliver is a knave\n(2) Elizabeth is a knight\n(3) Jacob is a knight",
+        "statements": "(('and', ('lying', 2), ('telling-truth', 1)), ('->', ('lying', 2), ('telling-truth', 2)), ('or', ('lying', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Mia, Abigail, and Ethan. Mia said that Ethan is a knight. As Abigail put it, \"Mia is a knight or Ethan is a knave\". Ethan said, \"Abigail is a knight or Ethan is a knight.\" So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Mia is a knight\n(2) Abigail is a knight\n(3) Ethan is a knight",
+        "statements": "(('telling-truth', 2), ('or', ('telling-truth', 0), ('lying', 2)), ('or', ('telling-truth', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Amelia, Lucas, and Jackson. Amelia said, \"Jackson is a knight or Lucas is a knave.\" \"Jackson is a knave or Amelia is a knight,\" Lucas claimed. Jackson asserted: \"Lucas is not a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Amelia is a knave\n(2) Lucas is a knight\n(3) Jackson is a knave",
+        "statements": "(('or', ('telling-truth', 2), ('lying', 1)), ('or', ('lying', 2), ('telling-truth', 0)), ('not', ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Logan, Noah, and Chloe. Logan told you that Chloe is a knight or Chloe is a knave. Noah was heard saying, \"Logan is a knight\". Chloe told you that Noah is a knight if and only if Logan is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Logan is a knight\n(2) Noah is a knight\n(3) Chloe is a knight",
+        "statements": "(('or', ('telling-truth', 2), ('lying', 2)), ('telling-truth', 0), ('<=>', ('telling-truth', 1), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Owen, Samuel, and Sophia. Owen commented, \"Sophia is a knight if and only if Samuel is a knave\". Samuel asserted: \"If Sophia is a knight then Sophia is a knave\". \"Samuel is a knight if and only if Samuel is a knave,\" Sophia mentioned. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Owen is a knight\n(2) Samuel is a knight\n(3) Sophia is a knave",
+        "statements": "(('<=>', ('telling-truth', 2), ('lying', 1)), ('->', ('telling-truth', 2), ('lying', 2)), ('<=>', ('telling-truth', 1), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Penelope, Emily, and David. \"If Penelope is a knight then David is a knight\" - Penelope. \"Emily is a knight if and only if Penelope is a knight\" - Emily. \"Emily is not a knight,\" David mentioned. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Penelope is a knight\n(2) Emily is a knave\n(3) David is a knight",
+        "statements": "(('->', ('telling-truth', 0), ('telling-truth', 2)), ('<=>', ('telling-truth', 1), ('telling-truth', 0)), ('not', ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Chloe, Henry, and Mason. \"Henry is a knight if and only if Henry is a knave,\" Chloe declared. Henry noted, \"Chloe is not a knight\". Mason noted, \"Chloe is a knight if and only if Chloe is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Chloe is a knave\n(2) Henry is a knight\n(3) Mason is a knave",
+        "statements": "(('<=>', ('telling-truth', 1), ('lying', 1)), ('not', ('telling-truth', 0)), ('<=>', ('telling-truth', 0), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Riley, Amelia, and Ethan. \"Amelia is not a knight,\" Riley declared. Amelia asserted: \"Riley is a knight or Amelia is a knight\". According to Ethan, \"Riley is a knight and Ethan is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Riley is a knave\n(2) Amelia is a knight\n(3) Ethan is a knave",
+        "statements": "(('not', ('telling-truth', 1)), ('or', ('telling-truth', 0), ('telling-truth', 1)), ('and', ('telling-truth', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Emily, Jacob, and Benjamin. Emily was heard saying, \"Benjamin is a knight or Emily is a knight\". As Jacob put it, \"Jacob is a knight and Emily is a knave\". Benjamin expressed that If Emily is a knight then Emily is a knave. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Emily is a knight\n(2) Jacob is a knave\n(3) Benjamin is a knave",
+        "statements": "(('or', ('telling-truth', 2), ('telling-truth', 0)), ('and', ('telling-truth', 1), ('lying', 0)), ('->', ('telling-truth', 0), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Aurora, Jackson, and Emma. Aurora was heard saying, \"Jackson is not a knight\". Jackson commented, \"Emma is not a knight\". Emma said that Jackson is a knight if and only if Emma is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Aurora is a knave\n(2) Jackson is a knight\n(3) Emma is a knave",
+        "statements": "(('not', ('telling-truth', 1)), ('not', ('telling-truth', 2)), ('<=>', ('telling-truth', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Isabella, Oliver, and Aria. In Isabella's words: \"Aria is a knave or Oliver is a knight\". In Oliver's words: \"Isabella is not a knave\". Aria expressed that Oliver is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Isabella is a knight\n(2) Oliver is a knight\n(3) Aria is a knight",
+        "statements": "(('or', ('lying', 2), ('telling-truth', 1)), ('not', ('lying', 0)), ('telling-truth', 1))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Lucas, David, and Scarlett. \"David is a knight and Lucas is a knight,\" Lucas claimed. David asserted: \"David is a knight and Scarlett is a knight\". Scarlett stated, \"David is a knave and Lucas is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Lucas is a knave\n(2) David is a knave\n(3) Scarlett is a knight",
+        "statements": "(('and', ('telling-truth', 1), ('telling-truth', 0)), ('and', ('telling-truth', 1), ('telling-truth', 2)), ('and', ('lying', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Harper, Victoria, and Evelyn. In Harper's words: \"If Victoria is a knight then Evelyn is a knight\". \"Evelyn is a knave if and only if Harper is a knight,\" Victoria declared. \"Victoria is a knave or Harper is a knave,\" Evelyn claimed. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Harper is a knight\n(2) Victoria is a knave\n(3) Evelyn is a knight",
+        "statements": "(('->', ('telling-truth', 1), ('telling-truth', 2)), ('<=>', ('lying', 2), ('telling-truth', 0)), ('or', ('lying', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Henry, Aria, and Joseph. \"Aria is a knight if and only if Joseph is a knave,\" Henry declared. \"Henry is a knave and Joseph is a knave,\" Aria mentioned. Joseph told you that Henry is a knave or Henry is a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Henry is a knight\n(2) Aria is a knave\n(3) Joseph is a knight",
+        "statements": "(('<=>', ('telling-truth', 1), ('lying', 2)), ('and', ('lying', 0), ('lying', 2)), ('or', ('lying', 0), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Samuel, Elizabeth, and Benjamin. Samuel said that Benjamin is a knight and Benjamin is a knave. Elizabeth was heard saying, \"Benjamin is a knight or Elizabeth is a knight\". Benjamin asserted: \"Elizabeth is a knight if and only if Samuel is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Samuel is a knave\n(2) Elizabeth is a knight\n(3) Benjamin is a knave",
+        "statements": "(('and', ('telling-truth', 2), ('lying', 2)), ('or', ('telling-truth', 2), ('telling-truth', 1)), ('<=>', ('telling-truth', 1), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Lucas, Samuel, and Joseph. As Lucas put it, \"If Samuel is a knight then Samuel is a knave\". Samuel expressed that Lucas is a knave if and only if Samuel is a knight. \"Lucas is a knight or Lucas is a knave,\" Joseph mentioned. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Lucas is a knave\n(2) Samuel is a knight\n(3) Joseph is a knight",
+        "statements": "(('->', ('telling-truth', 1), ('lying', 1)), ('<=>', ('lying', 0), ('telling-truth', 1)), ('or', ('telling-truth', 0), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Evelyn, Michael, and William. Evelyn said, \"If Michael is a knave then Evelyn is a knight.\" Michael noted, \"Evelyn is a knave or Evelyn is a knight\". \"Evelyn is a knight if and only if Michael is a knave\" - William. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Evelyn is a knight\n(2) Michael is a knight\n(3) William is a knave",
+        "statements": "(('->', ('lying', 1), ('telling-truth', 0)), ('or', ('lying', 0), ('telling-truth', 0)), ('<=>', ('telling-truth', 0), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Elizabeth, Ava, and David. According to Elizabeth, \"Elizabeth is a knight if and only if David is a knight\". As Ava put it, \"Ava is a knight if and only if Elizabeth is a knave\". David expressed that Ava is a knave if and only if Elizabeth is a knave. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Elizabeth is a knave\n(2) Ava is a knave\n(3) David is a knight",
+        "statements": "(('<=>', ('telling-truth', 0), ('telling-truth', 2)), ('<=>', ('telling-truth', 1), ('lying', 0)), ('<=>', ('lying', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Avery, Noah, and Harper. Avery remarked, \"If Avery is a knight then Harper is a knave\". Noah remarked, \"Harper is a knave or Avery is a knight\". In a statement by Harper: \"Avery is a knave and Harper is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Avery is a knight\n(2) Noah is a knight\n(3) Harper is a knave",
+        "statements": "(('->', ('telling-truth', 0), ('lying', 2)), ('or', ('lying', 2), ('telling-truth', 0)), ('and', ('lying', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Sofia, Amelia, and Mason. Sofia commented, \"If Sofia is a knight then Mason is a knave\". Amelia noted, \"Sofia is a knight if and only if Mason is a knave\". Mason stated, \"Mason is a knight and Sofia is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Sofia is a knight\n(2) Amelia is a knight\n(3) Mason is a knave",
+        "statements": "(('->', ('telling-truth', 0), ('lying', 2)), ('<=>', ('telling-truth', 0), ('lying', 2)), ('and', ('telling-truth', 2), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Samuel, Liam, and Luke. \"If Samuel is a knight then Liam is a knave\" - Samuel. \"Luke is not a knight,\" Liam declared. Luke asserted: \"Liam is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Samuel is a knight\n(2) Liam is a knave\n(3) Luke is a knight",
+        "statements": "(('->', ('telling-truth', 0), ('lying', 1)), ('not', ('telling-truth', 2)), ('lying', 1))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Sofia, Riley, and Lily. Sofia said, \"Riley is a knight if and only if Sofia is a knight.\" According to Riley, \"Lily is a knight if and only if Sofia is a knave\". Lily stated, \"Riley is a knight or Sofia is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Sofia is a knave\n(2) Riley is a knight\n(3) Lily is a knight",
+        "statements": "(('<=>', ('telling-truth', 1), ('telling-truth', 0)), ('<=>', ('telling-truth', 2), ('lying', 0)), ('or', ('telling-truth', 1), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Aria, Benjamin, and Sofia. Aria noted, \"Benjamin is a knight if and only if Benjamin is a knave\". Benjamin said, \"Benjamin is a knight and Aria is a knight.\" \"Benjamin is a knave\" - Sofia. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Aria is a knave\n(2) Benjamin is a knave\n(3) Sofia is a knight",
+        "statements": "(('<=>', ('telling-truth', 1), ('lying', 1)), ('and', ('telling-truth', 1), ('telling-truth', 0)), ('lying', 1))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Owen, Jacob, and Jack. \"If Jack is a knight then Jacob is a knight,\" Owen mentioned. Jacob expressed that If Jack is a knave then Owen is a knight. Jack commented, \"If Jacob is a knight then Owen is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Owen is a knight\n(2) Jacob is a knight\n(3) Jack is a knave",
+        "statements": "(('->', ('telling-truth', 2), ('telling-truth', 1)), ('->', ('lying', 2), ('telling-truth', 0)), ('->', ('telling-truth', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Ethan, David, and Samuel. Ethan commented, \"David is a knight and Samuel is a knave\". \"Samuel is not a knight,\" David claimed. \"If Ethan is a knave then Samuel is a knight,\" Samuel declared. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Ethan is a knave\n(2) David is a knave\n(3) Samuel is a knight",
+        "statements": "(('and', ('telling-truth', 1), ('lying', 2)), ('not', ('telling-truth', 2)), ('->', ('lying', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Jacob, Oliver, and Emma. \"Emma is a knave or Jacob is a knight,\" Jacob claimed. Oliver expressed that Jacob is a knave and Emma is a knave. \"Oliver is a knight and Jacob is a knave\" - Emma. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Jacob is a knight\n(2) Oliver is a knave\n(3) Emma is a knave",
+        "statements": "(('or', ('lying', 2), ('telling-truth', 0)), ('and', ('lying', 0), ('lying', 2)), ('and', ('telling-truth', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Harper, Chloe, and Avery. Harper remarked, \"If Avery is a knight then Chloe is a knave\". \"If Chloe is a knight then Harper is a knight\" - Chloe. Avery asserted: \"Avery is a knight and Chloe is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Harper is a knight\n(2) Chloe is a knight\n(3) Avery is a knave",
+        "statements": "(('->', ('telling-truth', 2), ('lying', 1)), ('->', ('telling-truth', 1), ('telling-truth', 0)), ('and', ('telling-truth', 2), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Henry, Chloe, and Elizabeth. Henry asserted: \"If Elizabeth is a knave then Henry is a knight\". In a statement by Chloe: \"Elizabeth is a knight and Henry is a knight\". Elizabeth told you that Henry is not a knight. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Henry is a knight\n(2) Chloe is a knave\n(3) Elizabeth is a knave",
+        "statements": "(('->', ('lying', 2), ('telling-truth', 0)), ('and', ('telling-truth', 2), ('telling-truth', 0)), ('not', ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Aurora, Noah, and Lucas. Aurora told you that If Lucas is a knave then Noah is a knight. According to Noah, \"Lucas is a knave\". Lucas expressed that Noah is a knight and Noah is a knave. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Aurora is a knight\n(2) Noah is a knight\n(3) Lucas is a knave",
+        "statements": "(('->', ('lying', 2), ('telling-truth', 1)), ('lying', 2), ('and', ('telling-truth', 1), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Lily, Michael, and Noah. \"Noah is a knight if and only if Michael is a knave,\" Lily mentioned. Michael said, \"If Noah is a knight then Noah is a knave.\" \"If Lily is a knave then Lily is a knight,\" Noah claimed. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Lily is a knight\n(2) Michael is a knave\n(3) Noah is a knight",
+        "statements": "(('<=>', ('telling-truth', 2), ('lying', 1)), ('->', ('telling-truth', 2), ('lying', 2)), ('->', ('lying', 0), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Emily, Lily, and Mason. Emily said that Mason is a knight. \"If Emily is a knight then Lily is a knight,\" Lily mentioned. \"Lily is a knight or Emily is a knave,\" Mason claimed. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Emily is a knight\n(2) Lily is a knight\n(3) Mason is a knight",
+        "statements": "(('telling-truth', 2), ('->', ('telling-truth', 0), ('telling-truth', 1)), ('or', ('telling-truth', 1), ('lying', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Matthew, Lily, and Victoria. In a statement by Matthew: \"Victoria is a knave and Lily is a knave\". Lily remarked, \"Matthew is a knight and Matthew is a knave\". As Victoria put it, \"If Matthew is a knave then Victoria is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Matthew is a knave\n(2) Lily is a knave\n(3) Victoria is a knight",
+        "statements": "(('and', ('lying', 2), ('lying', 1)), ('and', ('telling-truth', 0), ('lying', 0)), ('->', ('lying', 0), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Luke, Aiden, and Mason. \"Aiden is a knave and Mason is a knave,\" Luke declared. Aiden expressed that Aiden is a knight. \"If Luke is a knave then Luke is a knight,\" Mason declared. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Luke is a knave\n(2) Aiden is a knight\n(3) Mason is a knave",
+        "statements": "(('and', ('lying', 1), ('lying', 2)), ('telling-truth', 1), ('->', ('lying', 0), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Ava, David, and Zoey. In a statement by Ava: \"David is a knave\". David stated, \"David is a knight if and only if Ava is a knight\". Zoey commented, \"If David is a knight then Ava is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Ava is a knight\n(2) David is a knave\n(3) Zoey is a knight",
+        "statements": "(('lying', 1), ('<=>', ('telling-truth', 1), ('telling-truth', 0)), ('->', ('telling-truth', 1), ('telling-truth', 0)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Sofia, Ethan, and Charlotte. Sofia said, \"Ethan is a knight.\" Ethan stated, \"Charlotte is not a knight\". Charlotte asserted: \"Ethan is a knight and Charlotte is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Sofia is a knight\n(2) Ethan is a knight\n(3) Charlotte is a knave",
+        "statements": "(('telling-truth', 1), ('not', ('telling-truth', 2)), ('and', ('telling-truth', 1), ('telling-truth', 2)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Jackson, Sebastian, and Emma. As Jackson put it, \"Sebastian is not a knight\". Sebastian stated, \"Emma is a knave\". \"Jackson is a knight and Sebastian is a knight,\" Emma claimed. So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Jackson is a knave\n(2) Sebastian is a knight\n(3) Emma is a knave",
+        "statements": "(('not', ('telling-truth', 1)), ('lying', 2), ('and', ('telling-truth', 0), ('telling-truth', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Joseph, Aiden, and Jacob. \"If Jacob is a knight then Jacob is a knave,\" Joseph mentioned. \"Jacob is not a knave,\" Aiden declared. According to Jacob, \"Joseph is a knave if and only if Aiden is a knave\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Joseph is a knight\n(2) Aiden is a knave\n(3) Jacob is a knave",
+        "statements": "(('->', ('telling-truth', 2), ('lying', 2)), ('not', ('lying', 2)), ('<=>', ('lying', 0), ('lying', 1)))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Isabella, James, and Lily. Isabella told you that Lily is a knave and Lily is a knight. As James put it, \"Lily is a knave and Lily is a knight\". According to Lily, \"James is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Isabella is a knave\n(2) James is a knave\n(3) Lily is a knave",
+        "statements": "(('and', ('lying', 2), ('telling-truth', 2)), ('and', ('lying', 2), ('telling-truth', 2)), ('telling-truth', 1))"
+      }
+    }
+  ],
+  [
+    {
+      "from": "human",
+      "value": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 3 inhabitants: Henry, Sofia, and Oliver. Henry said that Oliver is a knave if and only if Oliver is a knight. Sofia remarked, \"Oliver is not a knight\". Oliver remarked, \"Henry is a knight\". So who is a knight and who is a knave?"
+    },
+    {
+      "from": "assistant",
+      "ground_truth": {
+        "value": "(1) Henry is a knave\n(2) Sofia is a knight\n(3) Oliver is a knave",
+        "statements": "(('<=>', ('lying', 2), ('telling-truth', 2)), ('not', ('telling-truth', 2)), ('telling-truth', 0))"
+      }
+    }
+  ]
+]

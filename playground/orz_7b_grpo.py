@@ -7,7 +7,7 @@ DEBUG_MODE=True python -m playground.orz_7b_grpo
 
 """
 
-
+import tensorboard
 import asyncio
 import os
 from concurrent.futures import ThreadPoolExecutor
@@ -29,11 +29,12 @@ executor = ThreadPoolExecutor(max_workers=64)
 
 @dataclass
 class PPOExpConfig(BasePPOExpConfig):
+    algorithm: str = "grpo"
     use_compute_reward_fn: bool = True
     use_orm_score: bool = False
 
     # Conditional settings with production values first
-    total_num_nodes: int = 32 if not DEBUG_MODE else 8
+    total_num_nodes: int = 2
 
     # resource related settings
     ref_num_nodes: int = total_num_nodes
@@ -42,8 +43,8 @@ class PPOExpConfig(BasePPOExpConfig):
     actor_num_gpus_per_node: int = 1
     critic_num_nodes: int = total_num_nodes
     critic_num_gpus_per_node: int = 1
-    colocate_all: bool = True
-    colocate_critic_reward: bool = True
+    colocate_all: bool = False
+    colocate_actor_rollout: bool = True
     colocate_actor_ref: bool = True
     vllm_num_engines: int = total_num_nodes
     vllm_tensor_parallel_size: int = 1
@@ -51,12 +52,12 @@ class PPOExpConfig(BasePPOExpConfig):
     zero_stage: int = 3
 
     # path related settings
-    pretrain: Optional[str] = "Qwen/Qwen2.5-7B" # TODO: or put your downloaded model path here!
+    pretrain: Optional[str] = "/home/yyx/RL/models/Qwen2.5-0.5B-Instruct/" # TODO: or put your downloaded model path here!
     reward_pretrain: Optional[str] = None
-    save_interval: int = 50
-    ckpt_path: str = f"orz_ckpt/{file_name}"
-    save_path: str = f"orz_ckpt/{file_name}"
-    tensorboard_log_dir: str = f"orz_logs/{file_name}"
+    save_interval: int = 20
+    ckpt_path: str = f"../ckpt/{file_name}"
+    save_path: str = f"../ckpt/{file_name}"
+    tensorboard_log_dir: str = f"tensorboard_logs/{file_name}"
 
     # MathTrain dataset and Math500 eval dataset
     # data related settings
@@ -83,13 +84,13 @@ class PPOExpConfig(BasePPOExpConfig):
     update_ref_every_epoch: bool = True
     advantage_normalize: bool = True
 
-    num_episodes: int = 20
-    rollout_batch_size: int = 128 if not DEBUG_MODE else 16
-    n_samples_per_prompt: int = 64 if not DEBUG_MODE else 2
-    micro_rollout_batch_size: int = 128
+    num_episodes: int = 3
+    rollout_batch_size: int = 4
+    n_samples_per_prompt: int = 16
+    micro_rollout_batch_size: int = 1
 
     policy_update_steps: int = 1
-    critic_update_steps: int = 12 if not DEBUG_MODE else 1
+    critic_update_steps: int = 12
     micro_train_batch_size: int = 1
     micro_forward_batch_size: int = 1
     freezing_actor_steps: int = -1
@@ -105,7 +106,7 @@ class PPOExpConfig(BasePPOExpConfig):
     # generate related settings
     packing_max_len: int = 16384
     generate_max_len: int = 8000  # TODO: change to larger later
-    max_len: int = 8192  # TODO: change to larger later
+    max_len: int = 2048  # TODO: change to larger later
     temperature: float = 1.0
     top_p: float = 1.0
     top_k: int = -1
@@ -114,7 +115,7 @@ class PPOExpConfig(BasePPOExpConfig):
     # grpo related settings
     use_grpo: bool = True
 
-    gpu_memory_utilization: float = 0.75 if not DEBUG_MODE else 0.5
+    gpu_memory_utilization: float = 0.5 if not DEBUG_MODE else 0.5
     critic_pretrain: Optional[str] = "" if use_grpo else pretrain
 
     gamma: float = 1.0

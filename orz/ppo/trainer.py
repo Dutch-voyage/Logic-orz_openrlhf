@@ -67,7 +67,14 @@ class RayPPOTrainer:
         # 1. create rank0 policy model and vllm_engines groups, then boardcast weights to vllm engins
         if self.cfg.colocate_all:
             await self.policy_model.backload_to_gpu()
-            await self._backload_vllm_engines()
+            # await self._backload_vllm_engines()
+        # if self.cfg.colocate_all:
+        #     await self.policy_model.backload_to_gpu()
+        #     await self._backload_vllm_engines()
+        # elif self.cfg.colocate_actor_rollout:
+        #     await self.policy_model.backload_to_gpu()
+        # else:
+        #     pass 
 
         await self.policy_model.async_run_method("_init_vllm_engines_actor_group", self.vllm_engines)
         logger.info("Create vllm engine gourps done.")
@@ -568,7 +575,7 @@ class RayPPOTrainer:
         self._max_steps = max_steps
         return prompts_dataloader
 
-    async def build_models(self, PolicyRayActor, CriticRayActor, RefRayActor, RewardRayActor=None):
+    async def build_models(self, PolicyRayActor, RefRayActor, CriticRayActor=None, RewardRayActor=None):
         cfg = self.cfg
         pg = None
 
@@ -597,6 +604,9 @@ class RayPPOTrainer:
                 pg=pg,
                 num_gpus_per_actor=0.2,
             )
+
+            print(f"policy_model and ref_model loaded")
+            assert False
             if cfg.critic_pretrain:
                 critic_model = PPORayActorGroup(
                     cfg.critic_num_nodes,
@@ -713,6 +723,7 @@ class RayPPOTrainer:
             await asyncio.gather(*policy_model.async_init_model_from_pretrained(self.strategy, cfg.pretrain))
             await policy_model.async_run_method("_set_pad_token_id", self.tokenizer.pad_token_id)
             await policy_model.offload_to_cpu()
+            print(f"policy_model offloaded")
             if cfg.critic_pretrain:
                 await asyncio.gather(*critic_model.async_init_model_from_pretrained(self.strategy, cfg.critic_pretrain))
                 await critic_model.offload_to_cpu()
